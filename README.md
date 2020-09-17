@@ -26,7 +26,14 @@ And configure in the `.rubocop.yml`.
 ```yaml
 .inherit-gem:
   theforeman-rubocop:
-    - all
+    - all.yml
+```
+
+### Basic style and performance cops
+```yaml
+.inherit-gem:
+  theforeman-rubocop:
+    - all.yml
 ```
 
 ### Choose just some cops
@@ -37,9 +44,9 @@ Cops are splited in categories for your convenience, so you can opt-out some cop
 ```yaml
 .inherit-gem:
   theforeman-rubocop:
-    - default.yml
-    - ruby_target.yml
-    - performance.yml
-    - rails.yml
-    - minitest.yml
+    - rules/style.yml
+    - rules/ruby_target.yml
+    - rules/performance.yml
+    - rules/rails.yml
+    - rules/minitest.yml
 ```
