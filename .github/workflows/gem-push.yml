@@ -1,10 +1,10 @@
-name: Ruby Gem
+name: Publish RubyGem to Github packages
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [ main ]
   pull_request:
-    branches: [ $default-branch ]
+    branches: [ main ]
 
 jobs:
   build:
