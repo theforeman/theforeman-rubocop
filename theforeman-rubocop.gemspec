@@ -6,7 +6,7 @@ require "theforeman/rubocop/version"
 Gem::Specification.new do |spec|
   spec.name          = "theforeman-rubocop"
   spec.version       = Theforeman::Rubocop::VERSION
-  spec.authors       = ["Foreman Team"]
+  spec.authors       = ["Ondrej Ezr"]
   spec.email         = ["team@theforeman.com"]
 
   spec.summary       = 'This gem guides and shares rubocop style configs.'
