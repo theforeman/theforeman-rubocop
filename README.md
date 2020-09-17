@@ -24,14 +24,14 @@ And configure in the `.rubocop.yml`.
 ### Easiest config - get all
 
 ```yaml
-.inherit-gem:
+inherit_gem:
   theforeman-rubocop:
     - all.yml
 ```
 
 ### Basic style and performance cops
 ```yaml
-.inherit-gem:
+inherit_gem:
   theforeman-rubocop:
     - all.yml
 ```
@@ -42,7 +42,7 @@ Cops are splited in categories for your convenience, so you can opt-out some cop
 
  .rubocop.yml
 ```yaml
-.inherit-gem:
+inherit_gem:
   theforeman-rubocop:
     - rules/style.yml
     - rules/ruby_target.yml
