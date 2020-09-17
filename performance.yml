@@ -1,0 +1,8 @@
+require:
+  - rubocop-performance
+
+Performance/RedundantMatch:
+  Enabled: true
+
+Performance/RedundantMerge:
+  Enabled: true

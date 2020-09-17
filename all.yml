@@ -1,0 +1,6 @@
+inherit_from:
+  - default.yml
+  - ruby_target.yml
+  - performance.yml
+  - rails.yml
+  - minitest.yml

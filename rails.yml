@@ -1,0 +1,9 @@
+require:
+  - rubocop-rails
+
+Rails:
+  Enabled: true
+
+Rails/SkipsModelValidations:
+  Exclude:
+    - 'db/migrate/*.rb'
