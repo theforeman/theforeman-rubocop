@@ -3,3 +3,4 @@ inherit_from:
   - rules/ruby_target.yml
   - rules/rails.yml
   - rules/minitest.yml
+

@@ -1,3 +1,8 @@
 inherit_from:
   - rules/style.yml
   - rules/performance.yml
+
+AllCops:
+  NewCops: disable
+  Exclude:
+    - 'node_modules/**/*'

@@ -1,0 +1,5 @@
+inherit_from:
+  - all.yml
+
+AllCops:
+  NewCops: enable

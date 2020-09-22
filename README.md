@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/theforeman-rubocop.svg)](https://badge.fury.io/rb/theforeman-rubocop)
+
 # theforeman-rubocop
 
 ![Foreman](https://raw.githubusercontent.com/theforeman/foreman-graphics/master/logo/foreman_medium.png)
@@ -36,6 +38,13 @@ inherit_gem:
     - all.yml
 ```
 
+### All cops, including newly introduced ones
+```yaml
+inherit_gem:
+  theforeman-rubocop:
+    - edge.yml
+```
+
 ### Choose just some cops
 
 Cops are splited in categories for your convenience, so you can opt-out some cops.
@@ -49,4 +58,7 @@ inherit_gem:
     - rules/performance.yml
     - rules/rails.yml
     - rules/minitest.yml
+
+AllCops:
+  NewCops: disable
 ```
