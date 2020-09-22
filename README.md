@@ -16,9 +16,7 @@ Instead of defining the rules for plugin per plugin, plugins can include default
 
 ```ruby
 # Gemfile
-source 'https://ezr-ondrej:dc069ebb028fa13cf880764491a921ef28724340@rubygems.pkg.github.com/ezr-ondrej/theforeman-rubocop' do
-  gem 'theforeman-rubocop', '~> 0.0.1'
-end
+gem 'theforeman-rubocop', '~> 0.0.1'
 ```
 
 And configure in the `.rubocop.yml`.
