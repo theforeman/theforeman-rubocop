@@ -16,7 +16,7 @@ Instead of defining the rules for plugin per plugin, plugins can include default
 
 ```ruby
 # Gemfile
-gem 'theforeman-rubocop', '~> 0.0.1'
+gem 'theforeman-rubocop', '~> 0.0.2'
 ```
 
 And configure in the `.rubocop.yml`.
