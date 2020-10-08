@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors       = IO.readlines('AUTHORS', encoding: 'utf-8').map(&:strip)
   spec.email         = ['foreman-dev@googlegroups.com']
 
-  spec.summary       = 'This gem guides and shares rubocop style configs.'
+  spec.summary       = 'Shared Rubocop configuration for theforeman.org family of projects.'
   spec.homepage      = 'https://github.com/theforeman/theforeman-rubocop'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|

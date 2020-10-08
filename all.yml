@@ -1,6 +1,11 @@
 inherit_from:
-  - default.yml
+  - rules/base.yml
+  - rules/style.yml
+  - rules/performance.yml
+  - rules/metrics.yml
   - rules/ruby_target.yml
   - rules/rails.yml
   - rules/minitest.yml
 
+AllCops:
+  NewCops: disable

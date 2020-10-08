@@ -1,0 +1,22 @@
+# Don't prefer is_a? over kind_of?
+Style/ClassCheck:
+  Enabled: false
+
+# Support both, Ruby 1.9 hashmap and hash-rocket syntax
+Style/HashSyntax:
+  EnforcedStyle: no_mixed_keys
+
+# disabled until we can configure "+" as concat sign
+Style/LineEndConcatenation:
+  Enabled: false
+
+# Both double and single quotes are OK
+Style/StringLiterals:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+  MinSize: 1
+
+Style/WordArray:
+  Enabled: false

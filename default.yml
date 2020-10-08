@@ -1,10 +1,8 @@
 inherit_from:
+  - rules/base.yml
   - rules/style.yml
+  - rules/style_permissive.yml
   - rules/performance.yml
 
 AllCops:
   NewCops: disable
-  Exclude:
-    - 'db/schema.rb'
-    - 'node_modules/**/*'
-    - 'vendor/**/*'

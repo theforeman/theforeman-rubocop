@@ -22,14 +22,6 @@ Style/Documentation:
 Style/EmptyMethod:
   EnforcedStyle: expanded
 
-# Support both, Ruby 1.9 hashmap and hash-rocket syntax
-Style/HashSyntax:
-  EnforcedStyle: no_mixed_keys
-
-# Both double and single quotes are OK
-Style/StringLiterals:
-  Enabled: false
-
 Style/TernaryParentheses:
   EnforcedStyle: require_parentheses_when_complex
 
