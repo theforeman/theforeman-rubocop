@@ -14,12 +14,20 @@ Instead of defining the rules for plugin per plugin, plugins can include default
 
 ## Usage
 
+Add the dependency into Gemfile
+
 ```ruby
 # Gemfile
 gem 'theforeman-rubocop', '~> 0.0.4'
 ```
 
-And configure in the `.rubocop.yml`.
+or gemspec
+
+```ruby
+s.add_development_dependency 'theforeman-rubocop', '~> 0.0.4'
+```
+
+and configure in the `.rubocop.yml`.
 
 ### Easiest config - get all
 
