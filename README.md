@@ -33,7 +33,7 @@ inherit_gem:
 ```yaml
 inherit_gem:
   theforeman-rubocop:
-    - all.yml
+    - default.yml
 ```
 
 ### All cops, including newly introduced ones
