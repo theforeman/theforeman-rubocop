@@ -21,26 +21,39 @@ gem 'theforeman-rubocop', '~> 0.0.4'
 
 And configure in the `.rubocop.yml`.
 
-### Easiest config - get all
+### Easiest config - all opinionated Cops `strict`
 
 ```yaml
 inherit_gem:
   theforeman-rubocop:
-    - all.yml
+    - strict.yml
 ```
 
-### Basic style and performance cops
+### Basic style - `default`, performance and rails cops
 ```yaml
 inherit_gem:
   theforeman-rubocop:
     - default.yml
 ```
 
-### All cops, including newly introduced ones
+### Not intrusive style - `lenient`
+It is similar to default, but has some not as important cops disabled.
+See `rules/style_lenient.yml` for disabled cops.
+
 ```yaml
 inherit_gem:
   theforeman-rubocop:
-    - edge.yml
+    - lenient.yml
+```
+
+### All opinionated cops with new ones - `strictest`
+If you want to closely follow what RuboCop introduces in its new versions, use this level.
+It is the same as `strict`, but enables the newly introduced cops.
+
+```yaml
+inherit_gem:
+  theforeman-rubocop:
+    - strictest.yml
 ```
 
 ### Choose just some cops
@@ -51,11 +64,14 @@ Cops are splited in categories for your convenience, so you can opt-out some cop
 ```yaml
 inherit_gem:
   theforeman-rubocop:
-    - rules/style.yml
+    - rules/base.yml
     - rules/ruby_target.yml
+    - rules/style.yml
+    - rules/metrics.yml
     - rules/performance.yml
     - rules/rails.yml
     - rules/minitest.yml
+    - rules/style_lenient.yml
 
 AllCops:
   NewCops: disable

@@ -1,0 +1,5 @@
+inherit_from:
+  - strict.yml
+
+AllCops:
+  NewCops: enable
