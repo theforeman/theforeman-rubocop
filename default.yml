@@ -1,5 +1,6 @@
 inherit_from:
   - rules/base.yml
+  - rules/ruby_target.yml
   - rules/style.yml
   - rules/performance.yml
   - rules/rails.yml
