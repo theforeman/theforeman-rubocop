@@ -1,5 +1,11 @@
+Naming/VariableNumber:
+  Enabled: false
+
 # Don't prefer is_a? over kind_of?
 Style/ClassCheck:
+  Enabled: false
+
+Style/HashAsLastArrayItem:
   Enabled: false
 
 # Support both, Ruby 1.9 hashmap and hash-rocket syntax
@@ -12,6 +18,9 @@ Style/LineEndConcatenation:
 
 # Both double and single quotes are OK
 Style/StringLiterals:
+  Enabled: false
+
+Style/StringConcatenation:
   Enabled: false
 
 Style/SymbolArray:

@@ -1,9 +1,9 @@
 inherit_from:
   - rules/base.yml
+  - rules/ruby_target.yml
   - rules/style.yml
   - rules/performance.yml
   - rules/metrics.yml
-  - rules/ruby_target.yml
   - rules/rails.yml
   - rules/minitest.yml
 
