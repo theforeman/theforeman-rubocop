@@ -1,3 +1,4 @@
 inherit_from:
   - default.yml
   - rules/style_lenient.yml
+  - rules/minitest_lenient.yml
