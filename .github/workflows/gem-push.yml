@@ -1,8 +1,9 @@
 name: Publish RubyGem
 
 on:
-  tags:
-    - v*
+  create:
+      tags:
+      - v*
 
 jobs:
   publish_ghp:
