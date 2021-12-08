@@ -1,0 +1,3 @@
+# We need to decide if we want to allow releasing from CI
+Gemspec/RequireMFA:
+  Enabled: false
