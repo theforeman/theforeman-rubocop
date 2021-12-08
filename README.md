@@ -14,6 +14,8 @@ Instead of defining the rules for plugin per plugin, plugins can include default
 
 ## Usage
 
+There is also a [guide how to run this in GH action](docs/github_action.md)
+
 ```ruby
 # Gemfile
 gem 'theforeman-rubocop', '~> 0.0.4'
