@@ -4,6 +4,7 @@ inherit_from:
   - rules/style.yml
   - rules/performance.yml
   - rules/rails.yml
+  - rules/to_decide.yml
 
 AllCops:
   NewCops: disable
