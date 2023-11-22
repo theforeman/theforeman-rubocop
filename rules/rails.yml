@@ -1,5 +1,6 @@
 require:
   - rubocop-rails
+  - rubocop-factory_bot
 
 AllCops:
   TargetRailsVersion: 6.1

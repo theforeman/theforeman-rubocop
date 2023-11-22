@@ -3,3 +3,6 @@ require:
 
 Minitest/MultipleAssertions:
   Max: 5
+
+Minitest/TestFileName:
+  Enabled: true
