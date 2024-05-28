@@ -8,6 +8,15 @@ Layout/ArgumentAlignment:
 Layout/FirstArgumentIndentation:
   EnforcedStyle: consistent
 
+Layout/LineContinuationLeadingSpace:
+  EnforcedStyle: trailing
+
+Layout/MultilineMethodParameterLineBreaks:
+  Enabled: false
+
+Layout/SpaceBeforeBrackets:
+  Enabled: false
+
 Style/Alias:
   EnforcedStyle: prefer_alias_method
 
