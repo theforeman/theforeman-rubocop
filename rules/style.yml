@@ -46,3 +46,114 @@ Style/TrailingCommaInArrayLiteral:
 
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: comma
+
+Style/EndlessMethod:
+  EnforcedStyle: allow_single_line
+
+Style/MagicCommentFormat:
+  EnforcedStyle: snake_case
+
+Style/ObjectThen:
+  EnforcedStyle: then
+
+Style/ArrayFirstLast:
+  Enabled: false
+
+Style/ArrayIntersect:
+  Enabled: false
+
+Style/CollectionCompact:
+  Enabled: false
+
+Style/ComparableClamp:
+  Enabled: false
+
+Style/ConcatArrayLiterals:
+  Enabled: false
+
+Style/DataInheritance:
+  Enabled: false
+
+Style/DirEmpty:
+  Enabled: false
+
+Style/EmptyHeredoc:
+  Enabled: false
+
+Style/EnvHome:
+  Enabled: false
+
+Style/ExactRegexpMatch:
+  Enabled: false
+
+Style/FileEmpty:
+  Enabled: false
+
+Style/FetchEnvVar:
+  Enabled: false
+
+Style/FileRead:
+  Enabled: false
+
+Style/FileWrite:
+  Enabled: false
+
+Style/HashExcept:
+  Enabled: false
+
+Style/InvertibleUnlessCondition:
+  Enabled: false
+
+Style/MapCompactWithConditionalBlock:
+  Enabled: false
+
+Style/MapToHash:
+  Enabled: false
+
+Style/MapToSet:
+  Enabled: false
+
+Style/NestedFileDirname:
+  Enabled: false
+
+Style/OperatorMethodCall:
+  Enabled: false
+
+Style/RedundantArrayConstructor:
+  Enabled: false
+
+Style/RedundantConstantBase:
+  Enabled: false
+
+Style/RedundantCurrentDirectoryInPath:
+  Enabled: false
+
+Style/RedundantDoubleSplatHashBraces:
+  Enabled: false
+
+Style/RedundantEach:
+  Enabled: false
+
+Style/RedundantFilterChain:
+  Enabled: false
+
+Style/RedundantLineContinuation:
+  Enabled: false
+
+Style/RedundantRegexpArgument:
+  Enabled: false
+
+Style/RedundantRegexpConstructor:
+  Enabled: false
+
+Style/RedundantStringEscape:
+  Enabled: false
+
+Style/RequireOrder:
+  Enabled: false
+
+Style/SuperWithArgsParentheses:
+  Enabled: false
+
+Style/YAMLFileRead:
+  Enabled: false
