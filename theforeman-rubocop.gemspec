@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rubocop-checkstyle_formatter', '~> 0.6.0'
   spec.add_dependency 'rubocop-graphql', '~> 1.4.0'
   spec.add_dependency 'rubocop-minitest', '~> 0.33.0'
-  spec.add_dependency 'rubocop-performance', '~> 1.19.0'
+  spec.add_dependency 'rubocop-performance', '>= 1.19', '< 1.22'
   spec.add_dependency 'rubocop-rails', '~> 2.22.0'
   spec.add_dependency 'rubocop-rspec', '~> 2.25.0'
   spec.add_development_dependency 'bundler', '~> 2.4', '>= 2.4.22'
