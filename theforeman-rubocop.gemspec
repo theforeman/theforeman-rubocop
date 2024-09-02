@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.7', '< 4'
 
-  spec.add_dependency 'rubocop', '~> 1.64.0'
+  spec.add_dependency 'rubocop', '>= 1.64', '< 1.67'
   spec.add_dependency 'rubocop-checkstyle_formatter', '~> 0.6.0'
   spec.add_dependency 'rubocop-graphql', '~> 1.4.0'
   spec.add_dependency 'rubocop-minitest', '~> 0.33.0'
