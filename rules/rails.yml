@@ -1,6 +1,8 @@
 require:
   - rubocop-rails
   - rubocop-factory_bot
+  - rubocop-capybara
+  - rubocop-graphql
 
 AllCops:
   TargetRailsVersion: 6.1
