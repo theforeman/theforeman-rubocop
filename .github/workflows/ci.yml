@@ -13,43 +13,56 @@ jobs:
   test_foreman:
     name: Test with Foreman
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ github.workspace }}/../foreman
     steps:
-      - uses: actions/checkout@v4  
+      - uses: actions/checkout@v4
 
       - name: Clone Foreman
         run: git clone --branch develop https://github.com/theforeman/foreman.git ../foreman
 
-      - name: Setup Ruby
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.0
           bundler-cache: true
 
-      - name: Test with Foreman
+      - name: Configure local theforeman-rubocop
         run: |
-          cd ../foreman
           bundle config local.theforeman-rubocop $GITHUB_WORKSPACE
-          bundle exec rubocop --config $GITHUB_WORKSPACE/.rubocop.yml
+          bundle install
+
+      - name: Run RuboCop validation
+        run: bundle exec rubocop --config $GITHUB_WORKSPACE/.rubocop.yml
 
   test_katello:
     name: Test with Katello
     runs-on: ubuntu-latest
     needs: test_foreman
+    defaults:
+      run:
+        working-directory: ${{ github.workspace }}/../katello
     steps:
       - uses: actions/checkout@v4
 
       - name: Clone Katello
         run: git clone --branch develop https://github.com/theforeman/katello.git ../katello
 
-      - name: Setup Ruby
+      - name: Clone Foreman
+        run: git clone --branch develop https://github.com/theforeman/foreman.git ../foreman
+
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.0
           bundler-cache: true
 
-      - name: Test with Katello
+      - name: Configure local dependencies
         run: |
-          cd ../katello
           bundle config local.theforeman-rubocop $GITHUB_WORKSPACE
           bundle config local.foreman $GITHUB_WORKSPACE/../foreman
-          bundle exec rubocop --config $GITHUB_WORKSPACE/.rubocop.yml
+          bundle install
+
+      - name: Run RuboCop validation
+        run: bundle exec rubocop --config $GITHUB_WORKSPACE/.rubocop.yml
