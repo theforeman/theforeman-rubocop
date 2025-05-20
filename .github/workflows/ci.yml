@@ -13,9 +13,9 @@ jobs:
   test_foreman:
     name: Test with Foreman
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ${{ github.workspace }}/../foreman
+    # defaults:
+    #   run:
+    #     working-directory: ${{ github.workspace }}/../foreman
     steps:
       - uses: actions/checkout@v4
 
@@ -31,22 +31,25 @@ jobs:
         with:
           ruby-version: 3.0
           bundler-cache: true
+          working-directory: foreman
 
       - name: Configure local theforeman-rubocop
+        working-directory: foreman
         run: |
           bundle config local.theforeman-rubocop $GITHUB_WORKSPACE
           bundle install
 
       - name: Run RuboCop validation
+        working-directory: foreman
         run: bundle exec rubocop --config $GITHUB_WORKSPACE/.rubocop.yml
 
   test_katello:
     name: Test with Katello
     runs-on: ubuntu-latest
     needs: test_foreman
-    defaults:
-      run:
-        working-directory: ${{ github.workspace }}/../katello
+    # defaults:
+    #   run:
+    #     working-directory: ${{ github.workspace }}/../katello
     steps:
       - uses: actions/checkout@v4
 
@@ -69,12 +72,15 @@ jobs:
         with:
           ruby-version: 3.0
           bundler-cache: true
+          working-directory: katello
 
       - name: Configure local dependencies
+        working-directory: katello
         run: |
           bundle config local.theforeman-rubocop $GITHUB_WORKSPACE
           bundle config local.foreman $GITHUB_WORKSPACE/../foreman
           bundle install
 
       - name: Run RuboCop validation
+        working-directory: katello
         run: bundle exec rubocop --config $GITHUB_WORKSPACE/.rubocop.yml
