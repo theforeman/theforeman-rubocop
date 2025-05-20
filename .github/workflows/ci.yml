@@ -19,8 +19,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Clone Foreman
-        run: git clone --branch develop https://github.com/theforeman/foreman.git ../foreman
+      - name: Checkout Foreman
+        uses: actions/checkout@v4
+        with:
+          repository: theforeman/foreman
+          ref: develop
+          path: foreman
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -46,11 +50,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Clone Katello
-        run: git clone --branch develop https://github.com/theforeman/katello.git ../katello
+      - name: Checkout Katello
+        uses: actions/checkout@v4
+        with:
+          repository: theforeman/katello
+          ref: develop
+          path: katello
 
-      - name: Clone Foreman
-        run: git clone --branch develop https://github.com/theforeman/foreman.git ../foreman
+      - name: Checkout Foreman
+        uses: actions/checkout@v4
+        with:
+          repository: theforeman/foreman
+          ref: develop
+          path: foreman
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
