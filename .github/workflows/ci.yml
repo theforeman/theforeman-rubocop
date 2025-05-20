@@ -9,78 +9,41 @@ concurrency:
   group: ${{ github.ref_name }}-${{ github.workflow }}
   cancel-in-progress: true
 
+env:
+  BUNDLE_WITHOUT: "console:journald:libvirt"
+
 jobs:
-  test_foreman:
-    name: Test with Foreman
+  test:
+    name: "Rubocop test ${{ matrix.repo }} with theforeman-rubocop"
     runs-on: ubuntu-latest
-    # defaults:
-    #   run:
-    #     working-directory: ${{ github.workspace }}/../foreman
+    strategy:
+      fail-fast: false
+      matrix:
+        repo:
+          - theforeman/foreman
+          - katello/katello
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout theforeman-rubocop
+        uses: actions/checkout@v4
 
-      - name: Checkout Foreman
+      - name: Checkout ${{ matrix.repo }}
         uses: actions/checkout@v4
         with:
-          repository: theforeman/foreman
-          ref: develop
-          path: foreman
+          repository: ${{ matrix.repo }}
+          path: to-test
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0
-          bundler-cache: true
-          working-directory: foreman
-
-      - name: Configure local theforeman-rubocop
-        working-directory: foreman
-        run: |
-          bundle config local.theforeman-rubocop $GITHUB_WORKSPACE
-          bundle install
-
-      - name: Run RuboCop validation
-        working-directory: foreman
-        run: bundle exec rubocop --config $GITHUB_WORKSPACE/.rubocop.yml
-
-  test_katello:
-    name: Test with Katello
-    runs-on: ubuntu-latest
-    needs: test_foreman
-    # defaults:
-    #   run:
-    #     working-directory: ${{ github.workspace }}/../katello
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Checkout Katello
-        uses: actions/checkout@v4
-        with:
-          repository: theforeman/katello
-          ref: develop
-          path: katello
-
-      - name: Checkout Foreman
-        uses: actions/checkout@v4
-        with:
-          repository: theforeman/foreman
-          ref: develop
-          path: foreman
-
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.0
-          bundler-cache: true
-          working-directory: katello
+          ruby-version: 2.7
+          bundler-cache: false
 
       - name: Configure local dependencies
-        working-directory: katello
+        working-directory: to-test
         run: |
-          bundle config local.theforeman-rubocop $GITHUB_WORKSPACE
-          bundle config local.foreman $GITHUB_WORKSPACE/../foreman
+          bundle config set --local local.theforeman-rubocop $GITHUB_WORKSPACE
           bundle install
 
-      - name: Run RuboCop validation
-        working-directory: katello
-        run: bundle exec rubocop --config $GITHUB_WORKSPACE/.rubocop.yml
+      - name: Run RuboCop
+        working-directory: to-test
+        run: bundle exec rubocop
