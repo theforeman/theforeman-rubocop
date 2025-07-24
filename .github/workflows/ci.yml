@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  BUNDLE_WITHOUT: "console:journald:libvirt"
+  BUNDLE_WITHOUT: "console:journald:libvirt:test"
 
 jobs:
   test:
