@@ -41,6 +41,7 @@ jobs:
       - name: Configure local dependencies
         working-directory: to-test
         run: |
+          rm -rf bundler.d/test.rb
           echo "gemspec name: 'theforeman-rubocop', path: '${GITHUB_WORKSPACE}'" >> Gemfile
           bundle install
 
