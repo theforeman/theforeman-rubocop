@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.ref_name }}-${{ github.workflow }}
+  cancel-in-progress: true
+
+env:
+  BUNDLE_WITHOUT: "console:journald:libvirt"
+
+jobs:
+  test:
+    name: "Rubocop test ${{ matrix.repo }} with theforeman-rubocop"
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        repo:
+          - theforeman/foreman
+          - katello/katello
+    steps:
+      - name: Checkout theforeman-rubocop
+        uses: actions/checkout@v4
+
+      - name: Checkout ${{ matrix.repo }}
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ matrix.repo }}
+          path: to-test
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          bundler-cache: false
+
+      - name: Configure local dependencies
+        working-directory: to-test
+        run: |
+          bundle config set --local local.theforeman-rubocop $GITHUB_WORKSPACE
+          bundle install
+
+      - name: Run RuboCop
+        working-directory: to-test
+        run: bundle exec rubocop
