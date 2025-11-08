@@ -6,6 +6,7 @@ inherit_from:
   - rules/rails.yml
   - rules/to_decide.yml
   - rules/minitest.yml
+  - rules/rake.yml
 
 AllCops:
   NewCops: disable
